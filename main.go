@@ -1,6 +1,3 @@
-// Copyright (c) HashiCorp, Inc.
-// SPDX-License-Identifier: MPL-2.0
-
 package main
 
 import (
@@ -35,10 +32,6 @@ func main() {
 		Address: "registry.terraform.io/kittykatt/omni",
 		Debug:   debug,
 	}
-
-	// tflog.Debug(context.Background(), "Starting Omni provider", map[string]interface{}{
-	// 	"version": version,
-	// })
 
 	err := providerserver.Serve(context.Background(), provider.New(version), opts)
 
