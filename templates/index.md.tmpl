@@ -1,0 +1,28 @@
+---
+page_title: "Provider: Omni"
+description: |-
+  The Omni provider is used for interacting with SideroLabs SaaS solution, Omni
+---
+
+# Omni Provider
+
+This provider is used for interacting with SideroLabs' SaaS or self-hosted Kubernetes
+cluster orchestration tool, Omni.
+
+This provider depends on Talos machines being created in some fashion outside of
+its logic and being linked with the Omni instance you're connecting the provider to.
+The Service Account should have the correct permissions to create and administrate
+clusters, as well.
+
+## Example Usage
+
+{{ tffile "examples/provider/provider.tf" }}
+
+## Provider Configuration
+
+{{ .SchemaMarkdown | trimspace }}
+
+## Limitations
+
+Currently, the only supported method of authenticating to an Omni instance in this
+provider is through a Service Account key.
