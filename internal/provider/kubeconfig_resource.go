@@ -397,9 +397,6 @@ func (r *omniClusterKubeConfig) Update(ctx context.Context, req resource.UpdateR
 	tflog.Debug(ctx, fmt.Sprintf("Contexts:\n%s", kubeconfigUnmarshalled.Contexts))
 	tflog.Debug(ctx, fmt.Sprintf("Users:\n%s", kubeconfigUnmarshalled.Users))
 
-	// plan.Clusters, _ = types.ListValueFrom(ctx, types.StringType, kubeconfigUnmarshalled.Clusters)
-	// plan.Contexts, _ = types.ListValueFrom(ctx, types.StringType, kubeconfigUnmarshalled.Contexts)
-	// plan.Users, _ = types.ListValueFrom(ctx, types.StringType, kubeconfigUnmarshalled.Users)
 	plan.YAML = types.StringValue(string(kubeconfig))
 	plan.ID = plan.Cluster
 	timeNow := types.StringValue(time.Now().Format(time.RFC850))
