@@ -13,8 +13,6 @@ Omni cluster template definition.
 ## Example Usage
 
 ```terraform
-# Copyright (c) HashiCorp, Inc.
-
 data "omni_cluster_template" "my_cluster" {
   name = var.cluster_name
   kubernetes {
@@ -92,7 +90,5 @@ Import is supported using the following syntax:
 The [`terraform import` command](https://developer.hashicorp.com/terraform/cli/commands/import) can be used, for example:
 
 ```shell
-# Copyright (c) HashiCorp, Inc.
-
 terraform import omni_cluster.my_cluster "name_of_cluster"
 ```

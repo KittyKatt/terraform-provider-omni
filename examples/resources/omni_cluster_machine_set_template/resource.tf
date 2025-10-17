@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-
 resource "omni_cluster_machine_set_template" "example" {
   name = "my-cluster-workers"
   kind = "worker"

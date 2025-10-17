@@ -13,8 +13,6 @@ Creates a machine template to use within a cluster template.
 ## Example Usage
 
 ```terraform
-# Copyright (c) HashiCorp, Inc.
-
 data "omni_cluster_template" "example" {
   name = "my-cluster"
   kubernetes = {

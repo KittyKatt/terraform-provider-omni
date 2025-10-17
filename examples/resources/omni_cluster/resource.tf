@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-
 data "omni_cluster_template" "my_cluster" {
   name = var.cluster_name
   kubernetes {
