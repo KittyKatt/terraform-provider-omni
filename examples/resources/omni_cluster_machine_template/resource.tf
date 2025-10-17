@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-
 resource "omni_cluster_machine_template" "example" {
   name = "my-machine"
   role = "controlplane"

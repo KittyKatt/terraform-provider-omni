@@ -13,8 +13,6 @@ Provides a list of Omni machine statuses.
 ## Example Usage
 
 ```terraform
-# Copyright (c) HashiCorp, Inc.
-
 # Example shown filters to machiens that currently don't belong to a cluster
 data "omni_machine_status" "example_1" {
   filters = {

@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-
 # Can also be provided with environment variable OMNI_ENDPOINT
 variable "omni_uri" {
   type = string

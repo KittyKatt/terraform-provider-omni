@@ -120,6 +120,7 @@ func (p *OmniProvider) Resources(ctx context.Context) []func() resource.Resource
 		NewOmniClusterResource,
 		NewOmniClusterMachinesTemplateResource,
 		NewOmniClusterMachineSetTemplateResource,
+		NewOmniClusterKubeConfigResource,
 	}
 }
 
