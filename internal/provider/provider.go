@@ -65,13 +65,13 @@ func (p *OmniProvider) Configure(ctx context.Context, req provider.ConfigureRequ
 		return
 	}
 
-	if config.Endpoint.IsUnknown() {
+	if config.Endpoint.IsNull() {
 		endpoint = os.Getenv("OMNI_ENDPOINT")
 	} else {
 		endpoint = config.Endpoint.String()
 	}
 
-	if config.ServiceAccountKey.IsUnknown() {
+	if config.ServiceAccountKey.IsNull() {
 		service_account_key = os.Getenv("OMNI_SERVICE_ACCOUNT_KEY")
 	} else {
 		service_account_key = config.ServiceAccountKey.String()
