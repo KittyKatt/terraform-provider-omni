@@ -56,14 +56,25 @@ func (p *OmniProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp 
 func (p *OmniProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
 	tflog.Info(ctx, "Configuring Omni client")
 
-	endpoint := os.Getenv("OMNI_ENDPOINT")
-	service_account_key := os.Getenv("OMNI_SERVICE_ACCOUNT_KEY")
-
+	var endpoint string
+	var service_account_key string
 	var config OmniProviderModelV0
 	diags := req.Config.Get(ctx, &config)
 	resp.Diagnostics.Append(diags...)
 	if resp.Diagnostics.HasError() {
 		return
+	}
+
+	if config.Endpoint.IsUnknown() {
+		endpoint = os.Getenv("OMNI_ENDPOINT")
+	} else {
+		endpoint = config.Endpoint.String()
+	}
+
+	if config.ServiceAccountKey.IsUnknown() {
+		service_account_key = os.Getenv("OMNI_SERVICE_ACCOUNT_KEY")
+	} else {
+		service_account_key = config.ServiceAccountKey.String()
 	}
 
 	tflog.Debug(ctx, fmt.Sprintf("Using Omni API client configuration: %s", endpoint))
