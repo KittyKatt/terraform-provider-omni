@@ -112,12 +112,12 @@ func (r *omniClusterResource) Schema(_ context.Context, _ resource.SchemaRequest
 				Description: "YAML document describing control plane machine set.",
 				Required:    true,
 			},
-			"workers_template": schema.ListAttribute{
+			"workers_template": schema.SetAttribute{
 				ElementType: types.StringType,
 				Description: "YAML document describing workers machine sets.",
 				Required:    true,
 			},
-			"machines_template": schema.ListAttribute{
+			"machines_template": schema.SetAttribute{
 				ElementType: types.StringType,
 				Description: "YAML document describing machines.",
 				Required:    true,
