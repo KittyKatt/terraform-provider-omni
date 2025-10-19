@@ -69,8 +69,8 @@ resource "omni_cluster" "my_cluster" {
 
 - `cluster_template` (String) YAML document describing cluster.
 - `control_plane_template` (String) YAML document describing control plane machine set.
-- `machines_template` (List of String) YAML document describing machines.
-- `workers_template` (List of String) YAML document describing workers machine sets.
+- `machines_template` (Set of String) YAML document describing machines.
+- `workers_template` (Set of String) YAML document describing workers machine sets.
 
 ### Optional
 
