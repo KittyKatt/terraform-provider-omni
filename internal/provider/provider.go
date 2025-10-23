@@ -138,6 +138,7 @@ func (p *OmniProvider) Resources(ctx context.Context) []func() resource.Resource
 func (p *OmniProvider) DataSources(_ context.Context) []func() datasource.DataSource {
 	return []func() datasource.DataSource{
 		NewOmniMachineStatusDataSource,
+		NewOmniDefaultMachineJoinConfigDataSource,
 		NewOmniClusterTemplateDataSource,
 	}
 }
